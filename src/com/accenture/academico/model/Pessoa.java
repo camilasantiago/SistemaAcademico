@@ -1,15 +1,15 @@
-package model;
+package com.accenture.academico.model;
 
 public abstract class Pessoa {
-	//CAMPO OBRIGATÓRIO
+	//CAMPO OBRIGATï¿½RIO
 	private int id; 
-	//CAMPO OBRIGATÓRIO
-	private String nome;//limitar o tamanho para até 100 caracteres
-	//CAMPO OBRIGATÓRIO
-	private String cpf; //validação cpf
-	//CAMPO OBRIGATÓRIO
+	//CAMPO OBRIGATï¿½RIO
+	private String nome;//limitar o tamanho para atï¿½ 100 caracteres
+	//CAMPO OBRIGATï¿½RIO
+	private String cpf; //validaï¿½ï¿½o cpf
+	//CAMPO OBRIGATï¿½RIO
 	private TipoSexo tipoSexo;
-	//CAMPO OBRIGATÓRIO
+	//CAMPO OBRIGATï¿½RIO
 	private TipoPessoa categoria;
 	private Endereco endereco;
 

@@ -1,4 +1,4 @@
-package model;
+package com.accenture.academico.model;
 
 public enum CidadesPernambuco {
 
@@ -8,8 +8,8 @@ public enum CidadesPernambuco {
 	GARANHUNS("Garanhuns", 7),
 	ARCOVERDE("Arco-verde", 6),
 	GOIANA("Goiana", 5),
-	GRAVATA("Gravatá", 4),
-	JABOATAODOSGUARARAPES("Jaboatão dos Guararapes", 3),
+	GRAVATA("Gravatï¿½", 4),
+	JABOATAODOSGUARARAPES("Jaboatï¿½o dos Guararapes", 3),
 	CARPINA("Carpina", 2),
 	LIMOEIRO("Limoeiro", 1);
 	
