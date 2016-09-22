@@ -1,16 +1,12 @@
-    <html xmlns="http://www.w3.org/1999/xhtml"  
-        xmlns:h="http://java.sun.com/jsf/html"  
-        xmlns:f="http://java.sun.com/jsf/core"  
-        xmlns:p="http://primefaces.org/ui"
-        xmlns:c="http://java.sun.com/jsp/jstl/core">  
-      
-        <h:head>  
-      
-        </h:head>  
-          
-        <h:body>  
-          <c:import url="/components/header.jsp" />
-            <h1>SISTEMA ACADEMICO</h1>
-              
-        </h:body>  
-    </html>  
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Sistema Acadêmico</title>
+</head>
+	<body>
+		<h1>Sistema Acadêmico</h1>
+	</body>
+</html>
