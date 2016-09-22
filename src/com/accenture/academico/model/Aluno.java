@@ -23,6 +23,7 @@ public class Aluno extends Pessoa {
 	
 	@OneToOne 
 	@JoinColumn(name="orientador")
+	@NotNull
 	private Professor professor; //Um aluno é orientado por 1 professor
 	
 	@OneToMany(fetch=FetchType.LAZY, mappedBy="tb_publicacao")

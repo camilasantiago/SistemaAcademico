@@ -3,6 +3,8 @@ package com.accenture.academico.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -14,6 +16,7 @@ import javax.validation.constraints.NotNull;
 public class Publicacao {
 	
 	@Id @NotNull
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
 	@NotNull
@@ -21,6 +24,7 @@ public class Publicacao {
 	private String tituloPublicacao;
 	
 	@Column(length=500)
+	@NotNull
 	private String descricao; //lança exceção
 	
 	@NotNull
