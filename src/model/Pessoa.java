@@ -11,7 +11,7 @@ public class Pessoa {
 	private TipoSexo tipoSexo;
 	//CAMPO OBRIGATÓRIO
 	private TipoPessoa categoria;
-
+	private Endereco endereco;
 
 	public int getId() {
 		return id;

@@ -44,7 +44,6 @@ public class CpfValidator implements Validator { //	REALIZAR VALIDAÇÃO DO CAMPO 
 	}
 
 	/**
-	 *
 	 * @param cpf String valor a ser testado
 	 * @return boolean indicando se o usuário entrou com um CPF padrão
 	 */
