@@ -13,11 +13,11 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name="tb_aluno")
+@Table(name = "tb_aluno")
 @ManagedBean()
 public class Aluno extends Pessoa {
 
-	@Column(name="matricula")
+	@Column(name = "matricula")
 	@NotNull
 	private String matricula;
 	
@@ -32,6 +32,7 @@ public class Aluno extends Pessoa {
 		return publicacoes;
 	}
 
+
 	public void setPublicacoes(List<Publicacao> publicacoes) {
 		this.publicacoes = publicacoes;
 	}
@@ -45,10 +46,19 @@ public class Aluno extends Pessoa {
 	}
 
 	public String getMatricula() {
+
 		return matricula;
+
 	}
 
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
+
+	}
+
+	@Override
+	public String toString() {
+		return "CPF: " + this.getCpf() + " - Matricula: " + this.getMatricula();
+
 	}
 }
