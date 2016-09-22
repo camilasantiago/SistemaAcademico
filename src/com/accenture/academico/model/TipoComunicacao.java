@@ -6,6 +6,22 @@ public enum TipoComunicacao {
 	TABLET("Tablet", 5),
 	BROWSER("Navegador", 4);
 	
+	public String getNomeDispositivo() {
+		return nomeDispositivo;
+	}
+
+	public void setNomeDispositivo(String nomeDispositivo) {
+		this.nomeDispositivo = nomeDispositivo;
+	}
+
+	public int getTempo() {
+		return tempo;
+	}
+
+	public void setTempo(int tempo) {
+		this.tempo = tempo;
+	}
+
 	private String nomeDispositivo;
 	private int tempo;
 	
