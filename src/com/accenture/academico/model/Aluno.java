@@ -5,6 +5,10 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -13,25 +17,30 @@ import javax.validation.constraints.NotNull;
 @ManagedBean(name="aluno")
 public class Aluno extends Pessoa {
 
-	// OBRIGATORIO
-	@Column(name="matricula")
+	@Column(name = "matricula")
 	@NotNull
 	private String matricula;
 	
-	private Professor professor; //através do tipo pessoa, pegar o id do professor.
+	@OneToOne 
+	@JoinColumn(name="orientador")
+	@NotNull
+	private Professor professor; //Um aluno é orientado por 1 professor
 	
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="tb_publicacao")
 	private List<Publicacao> publicacoes;
 
 
-
-
 	public String getMatricula() {
+
 		return matricula;
+
 	}
 
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
+
 	}
+
 
 	public List<Publicacao> getPublicacoes() {
 		return publicacoes;
@@ -47,6 +56,13 @@ public class Aluno extends Pessoa {
 
 	public void setProfessor(Professor professor) {
 		this.professor = professor;
+	}
+
+
+	@Override
+	public String toString() {
+		return "CPF: " + this.getCpf() + " - Matricula: " + this.getMatricula();
+
 	}
 
 }

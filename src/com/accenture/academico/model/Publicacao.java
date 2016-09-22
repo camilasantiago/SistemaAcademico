@@ -1,9 +1,12 @@
 package com.accenture.academico.model;
 
+
 import javax.faces.bean.ManagedBean;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -13,30 +16,40 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name="publicacao")
 @ManagedBean(name="publicacao")
+
 public class Publicacao {
 
-	@Id
-	@NotNull
-	@Column(name="id_publicacao")
+	@Id @NotNull
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name="tituloPublicacao", length=100)
 	@NotNull
-	private String tituloPublicacao; //100 caracteres lanca exeção
+	@Column(name="titulo", length=100)
+	private String tituloPublicacao;
 	
-	@Column(name="descricao")
+	@Column(length=500)
 	@NotNull
 	private String descricao; //lança exceção
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name="id_meioComunicacao")
-	private MeioComunicacao meioComunicacao;
-	
+	@NotNull
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="id_aluno")
 	private Aluno aluno;
 	
-	private Professor professor;
+	@NotNull
+	private  Professor professor; //Busca professor a partir do aluno.
 	
+	@ManyToOne(fetch = FetchType.EAGER) 
+	@JoinColumn(name="id_meioComunicacao", insertable= true, updatable=true) 
+	private MeioComunicacao meioComunicacao;
 
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	
 	public Aluno getAluno() {
 		return aluno;
 	}
@@ -48,12 +61,7 @@ public class Publicacao {
 	}
 	public void setProfessor(Professor professor) {
 		this.professor = professor;
-	}
-	public String getDescricao() {
-		return descricao;
-	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+
 	}
 	public int getId() {
 		return id;

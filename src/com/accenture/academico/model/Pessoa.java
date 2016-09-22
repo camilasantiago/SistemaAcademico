@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -25,13 +27,14 @@ public abstract class Pessoa {
 	@Id
 	@Column(name="id_pessoa")
 	@NotNull
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id; 
 	
 	@Column(name="nome", length=100)
 	@NotNull
 	private String nome;//limitar o tamanho para at� 100 caracteres
 	
-	@Column(name="cpf")
+	@Column(name="cpf", length=14)
 	@NotNull
 	private String cpf; //Package Valida contém o metodo de validação
 	
@@ -49,8 +52,7 @@ public abstract class Pessoa {
 	@NotNull
 	private Endereco endereco;
 	
-	@OneToMany(fetch = FetchType.LAZY)
-	@JoinColumn(name="id_telefone")
+	@OneToMany(mappedBy="tb_pessoa",fetch = FetchType.LAZY)
 	private List<Telefone> telefone;
 	
 
