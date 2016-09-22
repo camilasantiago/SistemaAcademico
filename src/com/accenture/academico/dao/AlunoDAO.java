@@ -1,4 +1,4 @@
-package dao;
+package com.accenture.academico.dao;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
-import model.Aluno;
+import com.accenture.academico.model.Aluno;
 
 @Repository
 public class AlunoDAO implements IAlunoDAO {
@@ -74,14 +74,14 @@ public class AlunoDAO implements IAlunoDAO {
 	public Aluno find(Long id) {
 
 		return daoAluno.find(id);
-		
+
 	}
 
 	@Override
 	public List<Aluno> listAlunos() {
-		
+
 		return daoAluno.list();
-		
+
 	}
 
 }

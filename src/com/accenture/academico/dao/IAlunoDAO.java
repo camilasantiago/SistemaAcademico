@@ -1,8 +1,8 @@
-package dao;
+package com.accenture.academico.dao;
 
 import java.util.List;
 
-import model.Aluno;
+import com.accenture.academico.model.Aluno;
 
 public interface IAlunoDAO {
 

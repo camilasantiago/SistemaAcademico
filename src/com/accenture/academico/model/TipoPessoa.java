@@ -1,4 +1,4 @@
-package model;
+package com.accenture.academico.model;
 
 public enum TipoPessoa {
 

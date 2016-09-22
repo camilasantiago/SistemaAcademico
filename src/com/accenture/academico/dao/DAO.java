@@ -1,4 +1,4 @@
-package dao;
+package com.accenture.academico.dao;
 
 import java.util.List;
 
