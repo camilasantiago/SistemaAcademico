@@ -13,8 +13,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "tb_aluno")
-@ManagedBean()
+@Table(name="tb_aluno")
+@ManagedBean(name="aluno")
 public class Aluno extends Pessoa {
 
 	@Column(name = "matricula")
@@ -29,10 +29,22 @@ public class Aluno extends Pessoa {
 	@OneToMany(fetch=FetchType.LAZY, mappedBy="tb_publicacao")
 	private List<Publicacao> publicacoes;
 
+
+	public String getMatricula() {
+
+		return matricula;
+
+	}
+
+	public void setMatricula(String matricula) {
+		this.matricula = matricula;
+
+	}
+
+
 	public List<Publicacao> getPublicacoes() {
 		return publicacoes;
 	}
-
 
 	public void setPublicacoes(List<Publicacao> publicacoes) {
 		this.publicacoes = publicacoes;
@@ -46,20 +58,11 @@ public class Aluno extends Pessoa {
 		this.professor = professor;
 	}
 
-	public String getMatricula() {
-
-		return matricula;
-
-	}
-
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
-
-	}
 
 	@Override
 	public String toString() {
 		return "CPF: " + this.getCpf() + " - Matricula: " + this.getMatricula();
 
 	}
+
 }

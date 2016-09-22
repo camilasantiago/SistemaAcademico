@@ -1,13 +1,19 @@
 package com.accenture.academico.model;
 
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -19,7 +25,7 @@ public abstract class Pessoa {
 	
 	//CAMPO OBRIGAT�RIO
 	@Id
-	@Column(name="id")
+	@Column(name="id_pessoa")
 	@NotNull
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id; 
@@ -41,9 +47,14 @@ public abstract class Pessoa {
 	@NotNull
 	private TipoPessoa categoria;
 	
-	@Column(name="endereco")
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="id_endereco")
 	@NotNull
 	private Endereco endereco;
+	
+	@OneToMany(mappedBy="tb_pessoa",fetch = FetchType.LAZY)
+	private List<Telefone> telefone;
+	
 
 	public int getId() {
 		return id;
@@ -76,4 +87,11 @@ public abstract class Pessoa {
 	public void setTipoSexo(TipoSexo tipoSexo) {
 		this.tipoSexo = tipoSexo;
 	}
+	public List<Telefone> getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(List<Telefone> telefone) {
+		this.telefone = telefone;
+	}
+
 }

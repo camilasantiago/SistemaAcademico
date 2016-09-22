@@ -21,7 +21,8 @@ import javax.validation.constraints.NotNull;
 public class Professor extends Pessoa{
 	
 	
-	@NotNull @Column(name="dtAdmissao")
+	@NotNull 
+	@Column(name="dtAdmissao")
 	@Temporal(value=TemporalType.DATE)
 	private Calendar dtAdmissao; //OBRIGATORIO
 	
@@ -29,11 +30,12 @@ public class Professor extends Pessoa{
 	@NotNull
 	private String departamento; //OBRIGATORIO
 	
-	@ManyToOne @NotNull
+	@ManyToOne 
+	@NotNull
 	@JoinColumn(name="Título")
 	private Titulacao titulacao; //OBRIGATORIO E COM 100 CARACTERES - essa string vai trazer a descri��o do t�tulo da classe Titulacao
 	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="tb_aluno")
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="tb_professor")
 	private List<Aluno> orientaAluno; //UM PROFESSOR ORIENTA UM OU MAIS ALUNOS
 	
 	/**

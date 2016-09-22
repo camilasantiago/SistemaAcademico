@@ -1,5 +1,7 @@
 package com.accenture.academico.model;
 
+
+import javax.faces.bean.ManagedBean;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,9 +14,11 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name="tb_publicacao")
+@Table(name="publicacao")
+@ManagedBean(name="publicacao")
+
 public class Publicacao {
-	
+
 	@Id @NotNull
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
@@ -35,6 +39,10 @@ public class Publicacao {
 	@NotNull
 	private  Professor professor; //Busca professor a partir do aluno.
 	
+	@ManyToOne(fetch = FetchType.EAGER) 
+	@JoinColumn(name="id_meioComunicacao", insertable= true, updatable=true) 
+	private MeioComunicacao meioComunicacao;
+
 	public String getDescricao() {
 		return descricao;
 	}
@@ -53,6 +61,7 @@ public class Publicacao {
 	}
 	public void setProfessor(Professor professor) {
 		this.professor = professor;
+
 	}
 	public int getId() {
 		return id;
@@ -65,5 +74,11 @@ public class Publicacao {
 	}
 	public void setTituloPublicacao(String tituloPublicacao) {
 		this.tituloPublicacao = tituloPublicacao;
+	}
+	public MeioComunicacao getMeioComunicacao() {
+		return meioComunicacao;
+	}
+	public void setMeioComunicacao(MeioComunicacao meioComunicacao) {
+		this.meioComunicacao = meioComunicacao;
 	}
 }
