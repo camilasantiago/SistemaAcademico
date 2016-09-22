@@ -1,20 +1,27 @@
 package com.accenture.academico.model;
 
+import java.util.List;
+
+import javax.faces.bean.ManagedBean;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="tb_endereco")
+@ManagedBean(name="endereco")
 public class Endereco {
 
 	@Id
 	@NotNull
-	@Column(name = "id")
+	@Column(name = "id_endereco")
 	private int id; // OBRIGATORIO E INCREMENTAL
 
 	@NotNull
@@ -37,6 +44,11 @@ public class Endereco {
 	@NotNull
 	@Column(name = "uf")
 	private String uf;
+	
+	
+//	@JoinColumn(name="id_pessoa", insertable=true, updatable = true, referencedColumnName="id_pessoa")
+	@OneToMany(mappedBy="pessoa", fetch = FetchType.LAZY)
+	private List<Pessoa> pessoas;
 
 	public String getUf() {
 		return uf;
