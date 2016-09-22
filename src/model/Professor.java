@@ -4,8 +4,8 @@ import java.util.Calendar;
 
 public class Professor extends Pessoa{
 	
-	private Calendar dtAdmissão; //OBRIGATORIO
+	private Calendar dtAdmissao; //OBRIGATORIO
 	private String departamento; //OBRIGATORIO
-	private String titulacao; //OBRIGATORIO E COM 100 CARACTERES - essa estring é vai trazer a descrição do título da classe Titulacao
+	private String titulacao; //OBRIGATORIO E COM 100 CARACTERES - essa estring ï¿½ vai trazer a descriï¿½ï¿½o do tï¿½tulo da classe Titulacao
 	
 }
