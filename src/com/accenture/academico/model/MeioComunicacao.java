@@ -11,5 +11,13 @@ public class MeioComunicacao {
 	public void setId(int id) {
 		this.id = id;
 	}
+	public TipoComunicacao getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(TipoComunicacao descricao) {
+		this.descricao = descricao;
+	}
+	
+	
 
 }
