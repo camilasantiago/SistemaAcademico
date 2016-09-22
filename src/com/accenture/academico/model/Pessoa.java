@@ -25,7 +25,7 @@ public abstract class Pessoa {
 	@NotNull
 	private String nome;//limitar o tamanho para at� 100 caracteres
 	
-	@Column(name="cpf")
+	@Column(name="cpf", length=14)
 	@NotNull
 	private String cpf; //Package Valida contém o metodo de validação
 	

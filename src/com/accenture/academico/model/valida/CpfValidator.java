@@ -8,6 +8,8 @@ import javax.faces.context.FacesContext;
 import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
+import com.accenture.academico.excecao.SistemaAcademicoException;
+
 /**
  * Algoritmo dispon�vel pela Caelum
  * Autor: Leonardo Bessa

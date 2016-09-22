@@ -1,31 +1,54 @@
 package com.accenture.academico.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name="tb_publicacao")
 public class Publicacao {
-
-	private int id;
-	private String tituloPublicacao; //100 caracteres lanca exeção
-	private String descricao; //lança exceção
-	private int idAluno;
-	private int idProfessor;
 	
-
+	@Id @NotNull
+	private int id;
+	
+	@NotNull
+	@Column(name="titulo", length=100)
+	private String tituloPublicacao;
+	
+	@Column(length=500)
+	private String descricao; //lança exceção
+	
+	@NotNull
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="id_aluno")
+	private Aluno aluno;
+	
+	@NotNull
+	private  Professor professor; //Busca professor a partir do aluno.
+	
 	public String getDescricao() {
 		return descricao;
 	}
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public int getIdAluno() {
-		return idAluno;
+	
+	public Aluno getAluno() {
+		return aluno;
 	}
-	public void setIdAluno(int idAluno) {
-		this.idAluno = idAluno;
+	public void setAluno(Aluno aluno) {
+		this.aluno = aluno;
 	}
-	public int getIdProfessor() {
-		return idProfessor;
+	public Professor getProfessor() {
+		return professor;
 	}
-	public void setIdProfessor(int idProfessor) {
-		this.idProfessor = idProfessor;
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
 	}
 	public int getId() {
 		return id;

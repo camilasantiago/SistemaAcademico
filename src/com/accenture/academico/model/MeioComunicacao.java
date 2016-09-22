@@ -1,7 +1,7 @@
 package com.accenture.academico.model;
 
 public class MeioComunicacao {
-
+	
 	private int id;
 	private TipoComunicacao descricao;
 
