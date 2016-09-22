@@ -1,6 +1,6 @@
 package model;
 
-public class Pessoa {
+public abstract class Pessoa {
 	//CAMPO OBRIGATÓRIO
 	private int id; 
 	//CAMPO OBRIGATÓRIO
