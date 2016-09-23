@@ -7,9 +7,11 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
 
 import com.accenture.academico.model.Professor;
 
+@Repository
 public class ProfessorDAOImpl implements ProfessorDAO {
 
 	private static final Logger logger = LoggerFactory.getLogger(ProfessorDAOImpl.class);

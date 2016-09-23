@@ -6,8 +6,11 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
+
 import com.accenture.academico.model.Aluno;
 
+@Repository
 public class AlunoDAOImpl implements AlunoDAO{
 
 	private static final Logger logger = LoggerFactory.getLogger(AlunoDAOImpl.class);

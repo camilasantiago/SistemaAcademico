@@ -3,9 +3,7 @@ package com.accenture.academico.controller;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
-
 import org.springframework.stereotype.Controller;
-
 import com.accenture.academico.model.Person;
 import com.accenture.academico.service.PersonService;
 
@@ -16,9 +14,7 @@ public class PersonControllerImpl implements PersonController {
 	private PersonService personService;
 
 	public void setPersonService(PersonService personService) {
-
 		this.personService = personService;
-
 	}
 
 	@Override
