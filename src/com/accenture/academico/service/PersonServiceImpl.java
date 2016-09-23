@@ -41,4 +41,8 @@ public class PersonServiceImpl implements PersonService {
 
 	}
 
+	public PersonDAO getPersonDAO() {
+		return personDAO;
+	}
+
 }

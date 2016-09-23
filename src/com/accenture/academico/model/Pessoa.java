@@ -26,8 +26,8 @@ import com.accenture.academico.model.type.TipoSexo;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table
-@ManagedBean(name = "pessoa")
-public abstract class Pessoa implements Serializable {
+@ManagedBean(name="pessoa")
+public class Pessoa implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -139,5 +139,6 @@ public abstract class Pessoa implements Serializable {
 		return id;
 
 	}
+	
 
 }

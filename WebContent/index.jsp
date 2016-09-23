@@ -10,7 +10,7 @@
 		<h1>Sistema Acadêmico</h1>
 		
 		
-<a href="http://localhost:8080/SistemaAcademico/person.xhtml">Person</a>
+<a href="http://localhost:8080/SistemaAcademico/cadastro.xhtml"><h2>Cadastro de pessoas(Aluno / Professor)</h2></a>
 		
 	</body>
 </html>

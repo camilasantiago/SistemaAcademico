@@ -32,6 +32,9 @@ public class Professor extends Pessoa {
 	@ManyToOne
 	@NotNull
 	private Titulo titulo;
+	
+	@NotNull
+	private String instEnsino;
 
 	@OneToMany(mappedBy = "professor")
 	private List<Aluno> listaAlunos;
@@ -89,6 +92,14 @@ public class Professor extends Pessoa {
 
 		return " => Id: " + this.getId() + " - Nome: " + this.getNome();
 
+	}
+
+	public String getInstEnsino() {
+		return instEnsino;
+	}
+
+	public void setInstEnsino(String instEnsino) {
+		this.instEnsino = instEnsino;
 	}
 
 }

@@ -50,48 +50,19 @@
 </h:head>
 
 <h:body>
-	<h1>Add a Person</h1>
-	<h:form>
-		<table>
-			<tr>
-				<td><label>Name</label></td>
-				<td><h:inputText id="name" value="#{person.name}"></h:inputText>
-				</td>
-			</tr>
-			<tr>
-				<td><label>Country</label></td>
-				<td><h:inputText id="country" value="#{person.country}"></h:inputText>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2"><h:commandButton
-						action="#{personController.addPerson(person)}" value="Add Person"></h:commandButton>
-				</td>
-			</tr>
-
-		</table>
-
-	</h:form>
 	
 	<br />
-	<h3>Persons List</h3>
-
-	<c:if test="${!empty personController.listPersons()}">
-		<table class="tg">
-			<tr>
-				<th width="80">Person ID</th>
-				<th width="120">Person Name</th>
-				<th width="120">Person Country</th>
-			</tr>
-			<ui:repeat value="${personController.listPersons()}" var="person">
-				<tr>
-					<td>${person.id}</td>
-					<td>${person.name}</td>
-					<td>${person.country}</td>
-				</tr>
-			</ui:repeat>
-		</table>
-	</c:if>
+	<p>COMEÇA</p>
+		
+	<p>TERMINA</p>
+	<br />
+	
+	
+	
+	
+	
+	
+	
 </h:body>
 
 </html>

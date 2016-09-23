@@ -46,4 +46,8 @@ public class TelefoneServiceImpl implements TelefoneService{
 		return telefoneDAO.listTelefone();
 	}
 
+	public TelefoneDAO getTelefoneDAO() {
+		return telefoneDAO;
+	}
+
 }

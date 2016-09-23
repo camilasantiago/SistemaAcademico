@@ -4,8 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:c="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui"
-	>
+	xmlns:q="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 	<title>Formulario</title>
@@ -40,38 +40,52 @@
 			
 			<h:outputLabel value="Sexo: " for="sexo"></h:outputLabel>
 			<h:selectOneRadio value="#{pessoa.tipoSexo}" required="true" >
-				<c:selectItem itemValue="feminino" itemLabel="Femino" />
-   				<c:selectItem itemValue="masculino" itemLabel="Masculino" />
-   				<c:selectItem itemValue="outro" itemLabel="Outro" />
+				<c:selectItem itemValue="FEMININO" itemLabel="Femino" />
+   				<c:selectItem itemValue="MASCULINO" itemLabel="Masculino" />
+   				<c:selectItem itemValue="OUTROS" itemLabel="Outro" />
    			</h:selectOneRadio>
    			   			
 			<h:outputLabel value="CPF: " for="cpf"></h:outputLabel>
 			<h:inputText id="cpf" value="#{pessoa.cpf}"></h:inputText>
-			
-			<h:outputLabel value="Vinculo: " for="vinculo" ></h:outputLabel>
-			<h:selectOneRadio value="#{pessoa.categoria}" required="true">
-				<c:selectItem itemValue="professor" itemLabel="Professor"/>
-				<c:selectItem itemValue="aluno" itemLabel="Aluno"/>
-   			</h:selectOneRadio>
-   		
-			<h:outputLabel value="Matrícula: " for="matricula"></h:outputLabel>
-			<h:inputText id="matricula" value="#{aluno.matricula}" disabled="#{pessoa.categoria == 'aluno'}"></h:inputText>
-			
-			<h:outputLabel value="Id: " for="id"></h:outputLabel>
-			<h:outputLabel id="id" value="#{professor.id}"></h:outputLabel>
-			
+				
 			<h:outputLabel value="Admissão: " for="matricula"></h:outputLabel>
-			<h:inputText id="admissao" value="#{professor.admissao}" pattern="dd/MM/yyyy" disabled="#{pessoa.categoria == 'professor'}"></h:inputText>
+			<h:inputText id="admissao" value="#{professor.dtAdmissao}" pattern="dd/MM/yyyy" disabled="#{pessoa.categoria.nomeApresentacao == 'professor'}"></h:inputText>
 			
 			<h:outputLabel value="Departamento: " for="departamento"></h:outputLabel>
-			<h:inputText id="departamento" value="#{professor.departamento}"  disabled="#{pessoa.categoria == 'professor'}"></h:inputText>
+			<h:inputText id="departamento" value="#{professor.departamento}"  disabled="#{pessoa.categoria.nomeApresentacao == 'professor'}"></h:inputText>
 			
 			<h:outputLabel value="Instituição de Ensino: " for="inEnsino"></h:outputLabel>
-			<h:inputText id="instensino" value="#{professor.instEnsino}" disabled="#{pessoa.categoria == 'professor'}" ></h:inputText>
+			<h:inputText id="instensino" value="#{professor.instEnsino}" disabled="#{pessoa.categoria.nomeApresentacao == 'professor'}" ></h:inputText>
+		<h:form>
+		<table>
+			<tr>
+				<td><label>DDD</label></td>
+				<td><h:inputText id="ddd" value="#{telefone.ddd}"></h:inputText>
+				</td>
+			</tr>
+			<tr>
+				<td><label>Telefone</label></td>
+				<td><h:inputText id="telefone" value="#{telefone.telefone}"></h:inputText>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><h:commandButton
+						action="#{telefoneController.addTelefone(telefone)}" value="Add telefone"></h:commandButton>
+				</td>
+			</tr>
+			<td colspan="2"><h:commandButton
+						action="#{alunoController.addAluno()}" value="Add pessoa"></h:commandButton>
+				</td>
+
+		</table>
+
+	</h:form>
+	
+	
+<q:if test="(pessoa.tipo == 'PROFESSOR')" ></q:if>
 			
-			<div class="container">
-			<h:commandButton value="Enviar" type="submit" action="#{user.insertPessoa}" class="btn btn-default" />
-			</div>	
+			
+			
 			</h:panelGrid>
 		</fieldset>
 	</h:form>

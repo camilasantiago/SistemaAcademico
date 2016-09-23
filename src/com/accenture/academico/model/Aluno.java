@@ -59,6 +59,11 @@ public class Aluno extends Pessoa {
 		return matricula;
 
 	}
+	
+
+	public void setMatricula(Integer matricula) {
+		this.matricula = matricula;
+	}
 
 	@Override
 	public String toString() {
