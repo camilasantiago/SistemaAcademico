@@ -8,5 +8,9 @@
 </head>
 	<body>
 		<h1>Sistema Acadêmico</h1>
+		
+		
+<a href="http://localhost:8080/SistemaAcademico/person.xhtml">Person</a>
+		
 	</body>
 </html>

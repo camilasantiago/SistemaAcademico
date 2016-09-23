@@ -1,5 +1,6 @@
 package com.accenture.academico.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
@@ -11,87 +12,132 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.accenture.academico.model.type.TipoPessoa;
+import com.accenture.academico.model.type.TipoSexo;
 
 @Entity
-@Table(name="tb_pessoa")
-@ManagedBean(name="pessoa")
-public abstract class Pessoa {
-	
-	//CAMPO OBRIGAT�RIO
+@Inheritance(strategy = InheritanceType.JOINED)
+@Table
+@ManagedBean(name = "pessoa")
+public abstract class Pessoa implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
 	@Id
-	@Column(name="id_pessoa")
+	@Column(name = "idPessoa")
 	@NotNull
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id; 
-	
-	@Column(name="nome", length=100)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+
+	@Column(name = "nome", length = 100)
 	@NotNull
-	private String nome;//limitar o tamanho para at� 100 caracteres
-	
-	@Column(name="cpf", length=14)
+	private String nome;
+
+	@Column(name = "cpf", length = 14)
 	@NotNull
-	private String cpf; //Package Valida contém o metodo de validação
-	
-	@Column(name="sexo")
+	private String cpf;
+
+	@Column(name = "sexo")
 	@NotNull
 	@Enumerated(EnumType.STRING)
 	private TipoSexo tipoSexo;
-	
-	@Column(name="categoria")
+
+	@Column(name = "categoria")
 	@NotNull
 	private TipoPessoa categoria;
-	
+
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name="id_endereco")
+	@JoinColumn(name = "id_endereco")
 	@NotNull
 	private Endereco endereco;
-	
-	@OneToMany(mappedBy="tb_pessoa",fetch = FetchType.LAZY)
-	private List<Telefone> telefone;
-	
 
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	@OneToMany(mappedBy = "pessoa")
+	private List<Telefone> telefone;
+
 	public String getNome() {
+
 		return nome;
+
 	}
+
 	public void setNome(String nome) {
+
 		this.nome = nome;
+
 	}
+
 	public String getCpf() {
+
 		return cpf;
+
 	}
+
 	public void setCpf(String cpf) {
+
 		this.cpf = cpf;
+
+	}
+
+	public TipoSexo getTipoSexo() {
+
+		return tipoSexo;
+
+	}
+
+	public void setTipoSexo(TipoSexo tipoSexo) {
+
+		this.tipoSexo = tipoSexo;
+
 	}
 
 	public TipoPessoa getCategoria() {
+
 		return categoria;
+
 	}
+
 	public void setCategoria(TipoPessoa categoria) {
+
 		this.categoria = categoria;
+
 	}
-	public TipoSexo getTipoSexo() {
-		return tipoSexo;
+
+	public Endereco getEndereco() {
+
+		return endereco;
+
 	}
-	public void setTipoSexo(TipoSexo tipoSexo) {
-		this.tipoSexo = tipoSexo;
+
+	public void setEndereco(Endereco endereco) {
+
+		this.endereco = endereco;
+
 	}
+
 	public List<Telefone> getTelefone() {
+
 		return telefone;
+
 	}
+
 	public void setTelefone(List<Telefone> telefone) {
+
 		this.telefone = telefone;
+
+	}
+
+	public int getId() {
+
+		return id;
+
 	}
 
 }
