@@ -38,18 +38,24 @@
 			<h:outputLabel value="Nome: " for="nome"></h:outputLabel>
 			<h:inputText id="nome" value="#{pessoa.nome}"></h:inputText>
 			
-			<h:outputLabel value="Sexo: " for="sexo"></h:outputLabel>
-			<h:selectOneRadio value="#{pessoa.tipoSexo}" required="true" >
-				<c:selectItem itemValue="FEMININO" itemLabel="Femino" />
-   				<c:selectItem itemValue="MASCULINO" itemLabel="Masculino" />
-   				<c:selectItem itemValue="OUTROS" itemLabel="Outro" />
-   			</h:selectOneRadio>
+			 <div class="field">
+            <h:outputLabel for="Sexo" value="Sexo" />
+            <!-- PROBLEMAS NO COMMIT POR CONTA DO ENUM -->
+            <h:selectOneMenu id="Sexo" value="#{pessoa.tipoSexo}" >
+                <c:selectItem itemLabel="FEMININO" itemValue="0" />
+                <c:selectItem itemLabel="MASCULINO" itemValue="1" />
+                <c:selectItem itemLabel="Outros" itemValue="2" />
+            </h:selectOneMenu>
+            <hr/>
+        </div>
    			   			
 			<h:outputLabel value="CPF: " for="cpf"></h:outputLabel>
 			<h:inputText id="cpf" value="#{pessoa.cpf}"></h:inputText>
 				
 			<h:outputLabel value="Admissão: " for="matricula"></h:outputLabel>
-			<h:inputText id="admissao" value="#{professor.dtAdmissao}" pattern="dd/MM/yyyy" disabled="#{pessoa.categoria.nomeApresentacao == 'professor'}"></h:inputText>
+			<h:inputText value="#{professor.dtAdmissao}">  
+  			 <c:convertDateTime pattern="dd/MM/yyyy"/>  
+				</h:inputText>
 			
 			<h:outputLabel value="Departamento: " for="departamento"></h:outputLabel>
 			<h:inputText id="departamento" value="#{professor.departamento}"  disabled="#{pessoa.categoria.nomeApresentacao == 'professor'}"></h:inputText>
@@ -74,7 +80,7 @@
 				</td>
 			</tr>
 			<td colspan="2"><h:commandButton
-						action="#{alunoController.addAluno()}" value="Add pessoa"></h:commandButton>
+						action="#{professorController.addProfessor(professor)}" value="Add professor"></h:commandButton>
 				</td>
 
 		</table>

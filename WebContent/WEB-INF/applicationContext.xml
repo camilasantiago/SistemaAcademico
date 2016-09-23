@@ -56,11 +56,13 @@
 		</beans:property>
 	</beans:bean>
 
+
 	
 	<!-- ssssssssssssssss -->
 		<beans:bean id="alunoDAO" class="com.accenture.academico.dao.AlunoDAOImpl">
 		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
-	</beans:bean>
+</beans:bean>
+
 
 	<beans:bean id="alunoService" class="com.accenture.academico.service.AlunoServiceImpl">
 		<beans:property name="alunoDAO" ref="alunoDAO"/>
@@ -71,6 +73,21 @@
 		<beans:bean id="telefoneDAO" class="com.accenture.academico.dao.TelefoneDAOImpl">
 		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
 	</beans:bean>
+	
+	<!-- Titulo -->
+	
+
+	<beans:bean id="tituloDAO" class="com.accenture.academico.dao.TituloDAOImpl">
+		<beans:property name="sessionFactory"			ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
+	
+	<beans:bean id="tituloService" class="com.accenture.academico.service.TituloServiceImpl">
+		<beans:property name="tituloDAO" ref="tituloDAO"/>
+	</beans:bean>
+	
+	<beans:bean id="tituloController" class="com.accenture.academico.controller.TituloControllerImpl">
+		<beans:property name="tituloService" ref="tituloService"/>
+	</beans:bean>
 
 	<beans:bean id="telefoneService" class="com.accenture.academico.service.TelefoneServiceImpl">
 		<beans:property name="telefoneDAO" ref="telefoneDAO"/>
@@ -80,6 +97,19 @@
 		<beans:property name="telefoneService" ref="telefoneService"/>
 	</beans:bean>
 
+
+
+
+<beans:bean id="professorService" class="com.accenture.academico.service.ProfessorServiceImpl">
+		<beans:property name="professorDAO" ref="professorDAO"/>
+	</beans:bean>
+	
+	<beans:bean id="professorController" class="com.accenture.academico.controller.ProfessorControllerImpl">
+		<beans:property name="professorService" ref="professorService"/>
+	</beans:bean>
+		<beans:bean id="professorDAO" class="com.accenture.academico.dao.ProfessorDAOImpl">
+		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
 
 
 	

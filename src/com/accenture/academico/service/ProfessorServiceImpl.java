@@ -53,6 +53,14 @@ public class ProfessorServiceImpl implements ProfessorService{
 		// TODO Auto-generated method stub
 		return professorDAO.listProfessor();
 	}
+
+	public ProfessorDAO getProfessorDAO() {
+		return professorDAO;
+	}
+
+	public void setProfessorDAO(ProfessorDAO professorDAO) {
+		this.professorDAO = professorDAO;
+	}
 	
 	
 }
