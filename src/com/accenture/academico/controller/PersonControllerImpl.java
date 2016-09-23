@@ -14,12 +14,14 @@ public class PersonControllerImpl implements PersonController {
 	private PersonService personService;
 
 	public void setPersonService(PersonService personService) {
+
 		this.personService = personService;
+
 	}
 
 	@Override
 	public void addPerson(Person p) {
-		System.out.println("RamonController");
+
 		personService.addPerson(p);
 
 	}
