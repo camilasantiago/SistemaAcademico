@@ -1,5 +1,6 @@
 package com.accenture.academico.model;
 
+import javax.faces.bean.ManagedBean;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@ManagedBean(name="telefone")
 public class Telefone {
 
 	@NotNull

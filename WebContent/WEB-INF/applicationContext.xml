@@ -33,6 +33,14 @@
 		<beans:property name="annotatedClasses">
 			<beans:list>
 				<beans:value>com.accenture.academico.model.Person</beans:value>
+				<beans:value>com.accenture.academico.model.Pessoa</beans:value>
+				<beans:value>com.accenture.academico.model.Aluno</beans:value>
+				<beans:value>com.accenture.academico.model.Professor</beans:value>
+				<beans:value>com.accenture.academico.model.Endereco</beans:value>
+				<beans:value>com.accenture.academico.model.Telefone</beans:value>
+				<beans:value>com.accenture.academico.model.Publicacao</beans:value>
+				<beans:value>com.accenture.academico.model.MeioPublicacao</beans:value>
+				<beans:value>com.accenture.academico.model.Titulo</beans:value>
 			</beans:list>
 		</beans:property>
 
@@ -53,7 +61,8 @@
 			ref="hibernate4AnnotatedSessionFactory" />
 	</beans:bean>
 
-	<beans:bean id="personService" class="com.accenture.academico.service.PersonServiceImpl">
+	<beans:bean id="personService"
+		class="com.accenture.academico.service.PersonServiceImpl">
 		<beans:property name="personDAO" ref="personDAO"></beans:property>
 	</beans:bean>
 

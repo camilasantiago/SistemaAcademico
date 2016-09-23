@@ -2,6 +2,7 @@ package com.accenture.academico.model;
 
 import java.util.List;
 
+import javax.faces.bean.ManagedBean;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -14,6 +15,7 @@ import javax.validation.constraints.NotNull;
 import com.accenture.academico.model.type.CidadesPernambuco;
 
 @Entity
+@ManagedBean(name="endereco")
 public class Endereco {
 
 	@Id
