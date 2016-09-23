@@ -32,7 +32,7 @@
 
 		<beans:property name="annotatedClasses">
 			<beans:list>
-
+				<beans:value>model.Person</beans:value>
 			</beans:list>
 		</beans:property>
 
@@ -46,6 +46,15 @@
 				<beans:prop key="hibernate.hbm2ddl.auto">update</beans:prop>
 			</beans:props>
 		</beans:property>
+	</beans:bean>
+
+	<beans:bean id="personDAO" class="dao.PersonDAOImpl">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
+
+	<beans:bean id="personService" class="service.PersonServiceImpl">
+		<beans:property name="personDAO" ref="personDAO"></beans:property>
 	</beans:bean>
 
 	<tx:annotation-driven transaction-manager="transactionManager" />
