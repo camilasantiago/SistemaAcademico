@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	>
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Formulario</title>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css" />	
+</h:head>
+
+<h:body>
+<div id ="global">
+	<div id="topo">
+     </div>
+<!-- 	<h:form>
+	<h1><h:outputText value="#{olaMundoBean.ola}" /></h1><br/>
+	<h:outputText value="#{olaMundoBean.horario}" /><br/><br/>
+	<h:outputLabel value="#{olaMundoBean.text1}"/>
+	<h:inputText value="#{olaMundoBean.nome}"/><br/>
+	<h:outputLabel value="#{olaMundoBean.text2}"/>
+	<h:inputText value="#{olaMundoBean.sobrenome}"/><br/>
+	<h:outputLabel value="#{olaMundoBean.text3}"/>
+	<h:inputText value="#{olaMundoBean.cpf}" maxlength ="11" required="true"/><br/>
+	<h:commandButton action="#{olaMundoBean.validaCPF(cpf)}" actionListener="#{olaMundoBean.nomeFoiDigitado}"  value="Ok"/>
+	<h:outputText value="Bem vindo ao mundo, #{olaMundoBean.nome} #{olaMundoBean.sobrenome}" rendered="#{not empty olaMundoBean.nome}"/>
+	</h:form>
+	 -->
+	<div id="formulario">
+	<h:form>
+		<fieldset>
+			<legend>Cadastro</legend>
+			<h:panelGrid columns="2" cellpadding="2" cellspacing="2">
+			
+			<h:outputLabel value="Nome: " for="nome"></h:outputLabel>
+			<h:inputText id="nome" value="#{pessoa.nome}"></h:inputText>
+			
+			<h:outputLabel value="Sexo: " for="sexo"></h:outputLabel>
+			<h:selectOneRadio value="#{pessoa.tipoSexo}" required="true" >
+				<c:selectItem itemValue="feminino" itemLabel="Femino" />
+   				<c:selectItem itemValue="masculino" itemLabel="Masculino" />
+   				<c:selectItem itemValue="outro" itemLabel="Outro" />
+   			</h:selectOneRadio>
+   			   			
+			<h:outputLabel value="CPF: " for="cpf"></h:outputLabel>
+			<h:inputText id="cpf" value="#{pessoa.cpf}"></h:inputText>
+			
+			<h:outputLabel value="Vinculo: " for="vinculo" ></h:outputLabel>
+			<h:selectOneRadio value="#{pessoa.categoria}" required="true">
+				<c:selectItem itemValue="professor" itemLabel="Professor"/>
+				<c:selectItem itemValue="aluno" itemLabel="Aluno"/>
+   			</h:selectOneRadio>
+   		
+			<h:outputLabel value="Matrícula: " for="matricula"></h:outputLabel>
+			<h:inputText id="matricula" value="#{aluno.matricula}" disabled="#{pessoa.categoria == 'aluno'}"></h:inputText>
+			
+			<h:outputLabel value="Id: " for="id"></h:outputLabel>
+			<h:outputLabel id="id" value="#{professor.id}"></h:outputLabel>
+			
+			<h:outputLabel value="Admissão: " for="matricula"></h:outputLabel>
+			<h:inputText id="admissao" value="#{professor.admissao}" pattern="dd/MM/yyyy" disabled="#{pessoa.categoria == 'professor'}"></h:inputText>
+			
+			<h:outputLabel value="Departamento: " for="departamento"></h:outputLabel>
+			<h:inputText id="departamento" value="#{professor.departamento}"  disabled="#{pessoa.categoria == 'professor'}"></h:inputText>
+			
+			<h:outputLabel value="Instituição de Ensino: " for="inEnsino"></h:outputLabel>
+			<h:inputText id="instensino" value="#{professor.instEnsino}" disabled="#{pessoa.categoria == 'professor'}" ></h:inputText>
+			
+			<div class="container">
+			<h:commandButton value="Enviar" type="submit" action="#{user.insertPessoa}" class="btn btn-default" />
+			</div>	
+			</h:panelGrid>
+		</fieldset>
+	</h:form>
+	</div>
+	<div id="rodape">
+    </div>
+	</div>
+</h:body>
+</html>
