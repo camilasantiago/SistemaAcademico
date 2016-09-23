@@ -1,8 +1,8 @@
-package dao;
+package com.accenture.academico.dao;
 
 import java.util.List;
 
-import model.Person;
+import com.accenture.academico.model.Person;
 
 public interface PersonDAO {
 

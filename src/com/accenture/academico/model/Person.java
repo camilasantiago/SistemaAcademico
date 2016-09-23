@@ -1,4 +1,4 @@
-package model;
+package com.accenture.academico.model;
 
 import javax.faces.bean.ManagedBean;
 import javax.persistence.Column;

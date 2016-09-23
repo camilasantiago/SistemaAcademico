@@ -1,4 +1,4 @@
-package service;
+package com.accenture.academico.service;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import javax.faces.bean.SessionScoped;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import dao.PersonDAO;
-import model.Person;
+import com.accenture.academico.dao.PersonDAO;
+import com.accenture.academico.model.Person;
 
 @ManagedBean(name = "personService")
 @SessionScoped

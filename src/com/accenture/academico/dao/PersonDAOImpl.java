@@ -1,4 +1,4 @@
-package dao;
+package com.accenture.academico.dao;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
-import model.Person;
+import com.accenture.academico.model.Person;
 
 @Repository
 public class PersonDAOImpl implements PersonDAO {
