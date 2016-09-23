@@ -65,7 +65,7 @@
 			</tr>
 			<tr>
 				<td colspan="2"><h:commandButton
-						action="#{personService.addPerson(person)}" value="Add Person"></h:commandButton>
+						action="#{personController.addPerson(person)}" value="Add Person"></h:commandButton>
 				</td>
 			</tr>
 
@@ -76,14 +76,14 @@
 	<br />
 	<h3>Persons List</h3>
 
-	<c:if test="${!empty personService.listPersons()}">
+	<c:if test="${!empty personController.listPersons()}">
 		<table class="tg">
 			<tr>
 				<th width="80">Person ID</th>
 				<th width="120">Person Name</th>
 				<th width="120">Person Country</th>
 			</tr>
-			<ui:repeat value="${personService.listPersons()}" var="person">
+			<ui:repeat value="${personController.listPersons()}" var="person">
 				<tr>
 					<td>${person.id}</td>
 					<td>${person.name}</td>

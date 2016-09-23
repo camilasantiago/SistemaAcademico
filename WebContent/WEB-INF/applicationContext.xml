@@ -57,13 +57,15 @@
 	</beans:bean>
 
 	<beans:bean id="personDAO" class="com.accenture.academico.dao.PersonDAOImpl">
-		<beans:property name="sessionFactory"
-			ref="hibernate4AnnotatedSessionFactory" />
+		<beans:property name="sessionFactory"			ref="hibernate4AnnotatedSessionFactory" />
 	</beans:bean>
 
-	<beans:bean id="personService"
-		class="com.accenture.academico.service.PersonServiceImpl">
-		<beans:property name="personDAO" ref="personDAO"></beans:property>
+	<beans:bean id="personService" class="com.accenture.academico.service.PersonServiceImpl">
+		<beans:property name="personDAO" ref="personDAO"/>
+	</beans:bean>
+	
+	<beans:bean id="personController" class="com.accenture.academico.controller.PersonControllerImpl">
+		<beans:property name="personService" ref="personService"/>
 	</beans:bean>
 
 	<tx:annotation-driven transaction-manager="transactionManager" />
