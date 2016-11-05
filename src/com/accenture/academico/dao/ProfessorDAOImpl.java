@@ -5,16 +5,12 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import com.accenture.academico.model.Professor;
 
 @Repository
 public class ProfessorDAOImpl implements ProfessorDAO {
-
-	private static final Logger logger = LoggerFactory.getLogger(ProfessorDAOImpl.class);
 
 	private SessionFactory sessionFactory;
 
@@ -29,7 +25,6 @@ public class ProfessorDAOImpl implements ProfessorDAO {
 
 		Session session = this.sessionFactory.getCurrentSession();
 		session.persist(p);
-		logger.info("Professor saved successfully. Professor " + p);
 
 	}
 
@@ -38,7 +33,7 @@ public class ProfessorDAOImpl implements ProfessorDAO {
 
 		Session session = this.sessionFactory.getCurrentSession();
 		session.merge(p);
-		logger.info("Professor updated successfully. Professor " + p);
+
 	}
 
 	@Override
@@ -46,7 +41,6 @@ public class ProfessorDAOImpl implements ProfessorDAO {
 
 		Session session = this.sessionFactory.getCurrentSession();
 		session.delete(p);
-		logger.info("Professor removed successfully. Professor " + p);
 
 	}
 
@@ -59,29 +53,21 @@ public class ProfessorDAOImpl implements ProfessorDAO {
 
 		if (p == null) {
 
-			logger.info("Professor not found.");
-
 			return null;
 
 		}
-
-		logger.info("Professor found. Professor " + p);
 
 		return p;
 
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Professor> listProfessor() {
 
 		Session session = this.sessionFactory.getCurrentSession();
+
 		List<Professor> professorList = session.createQuery("from Professor").list();
-
-		for (Professor p : professorList) {
-
-			logger.info("Professor List::" + p);
-
-		}
 
 		return professorList;
 

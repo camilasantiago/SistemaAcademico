@@ -15,4 +15,5 @@ public interface AlunoDAO {
 	public Aluno findAluno(Long id);
 
 	public List<Aluno> listAluno();
+
 }
