@@ -5,6 +5,6 @@ public enum TipoDispositivo {
 	CELULAR,
 	TABLET,
 	BROWSER,
-	NAO_IDENTIFICADO
+	NAO_IDENTIFICADO;
 	
 }
