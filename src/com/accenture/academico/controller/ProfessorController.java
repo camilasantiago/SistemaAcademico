@@ -1,6 +1,7 @@
 package com.accenture.academico.controller;
 
 import java.util.List;
+
 import com.accenture.academico.model.Professor;
 
 public interface ProfessorController {
