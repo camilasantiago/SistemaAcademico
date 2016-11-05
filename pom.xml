@@ -9,10 +9,14 @@
 	<properties>
 
 		<!-- Generic properties -->
-
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<!-- JSF -->
+		<jsf.version>2.2.4</jsf.version>
+
+
 
 		<!-- Spring -->
 
@@ -23,8 +27,6 @@
 
 		<hibernate.version>4.3.5.Final</hibernate.version>
 
-		<jsf.version>2.2.10</jsf.version>
-
 		<!-- Logging -->
 
 		<logback.version>1.0.13</logback.version>
@@ -33,6 +35,25 @@
 	</properties>
 
 	<dependencies>
+
+		<!-- Faces Implementation -->
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-impl</artifactId>
+			<version>${jsf.version}</version>
+		</dependency>
+		<!-- Faces Library -->
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-api</artifactId>
+			<version>${jsf.version}</version>
+		</dependency>
+		<!-- Primefaces -->
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>5.3</version>
+		</dependency>
 
 		<!-- Spring and Transactions -->
 
@@ -105,16 +126,7 @@
 			<version>1.4</version>
 		</dependency>
 
-		<dependency>
-			<groupId>com.sun.faces</groupId>
-			<artifactId>jsf-api</artifactId>
-			<version>${jsf.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.faces</groupId>
-			<artifactId>jsf-impl</artifactId>
-			<version>${jsf.version}</version>
-		</dependency>
+
 
 		<!-- Logging with SLF4J & LogBack -->
 		<dependency>
@@ -133,18 +145,6 @@
 
 		<!-- http://repo1.maven.org/maven -->
 
-		<dependency>
-		    <groupId>javax.faces</groupId>
-		    <artifactId>jsf-api</artifactId>
-		    <version>2.1</version>
-		</dependency>
-		
-	   	<dependency>
-		    <groupId>javax.faces</groupId>
-		    <artifactId>javax.faces-api</artifactId>
-		    <version>2.2</version>
-		</dependency>
-   
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
@@ -168,7 +168,6 @@
 			<artifactId>el-ri</artifactId>
 			<version>1.0</version>
 		</dependency>
-
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-web-api</artifactId>
