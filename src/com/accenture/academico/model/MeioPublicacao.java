@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
 import com.accenture.academico.model.type.TipoDispositivo;
 
 @Entity
-@ManagedBean(name="meioPublicacao")
+@ManagedBean(name = "meioPublicacao")
 public class MeioPublicacao {
 
 	@Id

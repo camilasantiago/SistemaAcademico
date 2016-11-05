@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@ManagedBean(name="titulo")
+@ManagedBean(name = "titulo")
 public class Titulo {
 
 	@Id

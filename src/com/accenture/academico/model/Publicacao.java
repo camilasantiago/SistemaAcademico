@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@ManagedBean(name="publicacao")
+@ManagedBean(name = "publicacao")
 public class Publicacao {
 
 	@Id

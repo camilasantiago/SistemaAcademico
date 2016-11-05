@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@ManagedBean(name="telefone")
+@ManagedBean(name = "telefone")
 public class Telefone {
 
 	@NotNull
@@ -61,11 +61,6 @@ public class Telefone {
 	public void setTelefone(String telefone) {
 
 		this.telefone = telefone;
-
-	}
-
-	public void setId(Long id) {
-		this.id = id;	
 
 	}
 

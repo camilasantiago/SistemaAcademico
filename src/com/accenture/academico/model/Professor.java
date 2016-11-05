@@ -20,6 +20,8 @@ import javax.validation.constraints.NotNull;
 @ManagedBean(name = "professor")
 public class Professor extends Pessoa {
 
+	private static final long serialVersionUID = -1675559664523014564L;
+
 	@NotNull
 	@Column(name = "dtAdmissao")
 	@Temporal(value = TemporalType.DATE)
@@ -32,7 +34,7 @@ public class Professor extends Pessoa {
 	@ManyToOne
 	@NotNull
 	private Titulo titulo;
-	
+
 	@NotNull
 	private String instEnsino;
 
@@ -87,19 +89,16 @@ public class Professor extends Pessoa {
 
 	}
 
-	@Override
-	public String toString() {
-
-		return " => Id: " + this.getId() + " - Nome: " + this.getNome();
-
-	}
-
 	public String getInstEnsino() {
+
 		return instEnsino;
+
 	}
 
 	public void setInstEnsino(String instEnsino) {
+
 		this.instEnsino = instEnsino;
+
 	}
 
 }

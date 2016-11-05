@@ -18,6 +18,8 @@ import javax.validation.constraints.NotNull;
 @ManagedBean(name = "aluno")
 public class Aluno extends Pessoa {
 
+	private static final long serialVersionUID = -2592871195731078140L;
+
 	@Column(name = "matricula")
 	@NotNull
 	@GeneratedValue
@@ -58,11 +60,6 @@ public class Aluno extends Pessoa {
 
 		return matricula;
 
-	}
-	
-
-	public void setMatricula(Integer matricula) {
-		this.matricula = matricula;
 	}
 
 	@Override

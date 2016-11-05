@@ -15,7 +15,7 @@ import javax.validation.constraints.NotNull;
 import com.accenture.academico.model.type.CidadesPernambuco;
 
 @Entity
-@ManagedBean(name="endereco")
+@ManagedBean(name = "endereco")
 public class Endereco {
 
 	@Id
@@ -29,7 +29,7 @@ public class Endereco {
 	@NotNull
 	@Column(length = 100)
 	private String bairro;
-	
+
 	@NotNull
 	private Integer numero;
 
