@@ -5,6 +5,7 @@ import java.util.List;
 import com.accenture.academico.model.Professor;
 
 public interface ProfessorService {
+
 	public void addProfessor(Professor p);
 
 	public void updateProfessor(Professor p);
@@ -14,4 +15,5 @@ public interface ProfessorService {
 	public Professor findProfessor(Long id);
 
 	public List<Professor> listProfessor();
+
 }

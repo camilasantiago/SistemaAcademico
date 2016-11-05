@@ -14,53 +14,48 @@ import com.accenture.academico.model.Aluno;
 @ManagedBean(name = "alunoService")
 @SessionScoped
 @Service
-public class AlunoServiceImpl implements AlunoService{
-	
+public class AlunoServiceImpl implements AlunoService {
+
 	private AlunoDAO alunoDAO;
 
 	@Override
 	@Transactional
 	public void addAluno(Aluno a) {
-		// TODO Auto-generated method stub
+
 		alunoDAO.addAluno(a);
-		
+
 	}
 
 	@Override
 	@Transactional
 	public void updateAluno(Aluno a) {
-		// TODO Auto-generated method stub
+
 		alunoDAO.updateAluno(a);
+
 	}
 
 	@Override
 	@Transactional
 	public void removeAluno(Aluno a) {
-		// TODO Auto-generated method stub
+
 		alunoDAO.removeAluno(a);
+
 	}
 
 	@Override
 	@Transactional
 	public Aluno findAluno(Long id) {
-		// TODO Auto-generated method stub
+
 		return alunoDAO.findAluno(id);
+
 	}
 
 	@Override
 	@Transactional
 	public List<Aluno> listAluno() {
-		// TODO Auto-generated method stub
+
 		return alunoDAO.listAluno();
-	}
 
-	public AlunoDAO getAlunoDAO() {
-		return alunoDAO;
 	}
-
-	public void setAlunoDAO(AlunoDAO alunoDAO) {
-		this.alunoDAO = alunoDAO;
-	}
-	
 
 }
