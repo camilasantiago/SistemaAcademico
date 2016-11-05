@@ -58,4 +58,15 @@ public class AlunoServiceImpl implements AlunoService {
 
 	}
 
+	public AlunoDAO getAlunoDAO() {
+		return alunoDAO;
+
+	}
+
+	public void setAlunoDAO(AlunoDAO alunoDAO) {
+
+		this.alunoDAO = alunoDAO;
+
+	}
+
 }

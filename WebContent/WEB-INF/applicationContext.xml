@@ -32,14 +32,14 @@
 
 		<beans:property name="annotatedClasses">
 			<beans:list>
-				<beans:value>com.accenture.academico.model.Person</beans:value>
 				<beans:value>com.accenture.academico.model.Pessoa</beans:value>
 				<beans:value>com.accenture.academico.model.Aluno</beans:value>
 				<beans:value>com.accenture.academico.model.Professor</beans:value>
 				<beans:value>com.accenture.academico.model.Endereco</beans:value>
 				<beans:value>com.accenture.academico.model.Telefone</beans:value>
 				<beans:value>com.accenture.academico.model.Publicacao</beans:value>
-				<beans:value>com.accenture.academico.model.MeioPublicacao</beans:value>
+				<beans:value>com.accenture.academico.model.MeioPublicacao
+				</beans:value>
 				<beans:value>com.accenture.academico.model.Titulo</beans:value>
 			</beans:list>
 		</beans:property>
@@ -56,63 +56,58 @@
 		</beans:property>
 	</beans:bean>
 
-
-	
-	<!-- ssssssssssssssss -->
-		<beans:bean id="alunoDAO" class="com.accenture.academico.dao.AlunoDAOImpl">
-		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
-</beans:bean>
-
-
-	<beans:bean id="alunoService" class="com.accenture.academico.service.AlunoServiceImpl">
-		<beans:property name="alunoDAO" ref="alunoDAO"/>
+	<!-- Aluno -->
+	<beans:bean id="alunoDAO" class="com.accenture.academico.dao.AlunoDAOImpl">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory" />
 	</beans:bean>
-	
-	
-	<!-- ssssssssssssssss -->
-		<beans:bean id="telefoneDAO" class="com.accenture.academico.dao.TelefoneDAOImpl">
-		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	<beans:bean id="alunoService"
+		class="com.accenture.academico.service.AlunoServiceImpl">
+		<beans:property name="alunoDAO" ref="alunoDAO" />
 	</beans:bean>
-	
+
 	<!-- Titulo -->
-	
-
 	<beans:bean id="tituloDAO" class="com.accenture.academico.dao.TituloDAOImpl">
-		<beans:property name="sessionFactory"			ref="hibernate4AnnotatedSessionFactory" />
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory" />
 	</beans:bean>
-	
-	<beans:bean id="tituloService" class="com.accenture.academico.service.TituloServiceImpl">
-		<beans:property name="tituloDAO" ref="tituloDAO"/>
+	<beans:bean id="tituloService"
+		class="com.accenture.academico.service.TituloServiceImpl">
+		<beans:property name="tituloDAO" ref="tituloDAO" />
 	</beans:bean>
-	
-	<beans:bean id="tituloController" class="com.accenture.academico.controller.TituloControllerImpl">
-		<beans:property name="tituloService" ref="tituloService"/>
-	</beans:bean>
-
-	<beans:bean id="telefoneService" class="com.accenture.academico.service.TelefoneServiceImpl">
-		<beans:property name="telefoneDAO" ref="telefoneDAO"/>
-	</beans:bean>
-	
-	<beans:bean id="telefoneController" class="com.accenture.academico.controller.TelefoneControllerImpl">
-		<beans:property name="telefoneService" ref="telefoneService"/>
+	<beans:bean id="tituloController"
+		class="com.accenture.academico.controller.TituloControllerImpl">
+		<beans:property name="tituloService" ref="tituloService" />
 	</beans:bean>
 
-
-
-
-<beans:bean id="professorService" class="com.accenture.academico.service.ProfessorServiceImpl">
-		<beans:property name="professorDAO" ref="professorDAO"/>
+	<!-- Telefone -->
+	<beans:bean id="telefoneDAO" class="com.accenture.academico.dao.TelefoneDAOImpl">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory" />
 	</beans:bean>
-	
-	<beans:bean id="professorController" class="com.accenture.academico.controller.ProfessorControllerImpl">
-		<beans:property name="professorService" ref="professorService"/>
+	<beans:bean id="telefoneService"
+		class="com.accenture.academico.service.TelefoneServiceImpl">
+		<beans:property name="telefoneDAO" ref="telefoneDAO" />
 	</beans:bean>
-		<beans:bean id="professorDAO" class="com.accenture.academico.dao.ProfessorDAOImpl">
-		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	<beans:bean id="telefoneController"
+		class="com.accenture.academico.controller.TelefoneControllerImpl">
+		<beans:property name="telefoneService" ref="telefoneService" />
 	</beans:bean>
 
-
-	
+	<!-- Professor -->
+	<beans:bean id="professorService"
+		class="com.accenture.academico.service.ProfessorServiceImpl">
+		<beans:property name="professorDAO" ref="professorDAO" />
+	</beans:bean>
+	<beans:bean id="professorController"
+		class="com.accenture.academico.controller.ProfessorControllerImpl">
+		<beans:property name="professorService" ref="professorService" />
+	</beans:bean>
+	<beans:bean id="professorDAO"
+		class="com.accenture.academico.dao.ProfessorDAOImpl">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
 
 	<tx:annotation-driven transaction-manager="transactionManager" />
 

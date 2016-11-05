@@ -58,4 +58,16 @@ public class ProfessorServiceImpl implements ProfessorService {
 
 	}
 
+	public ProfessorDAO getProfessorDAO() {
+
+		return professorDAO;
+
+	}
+
+	public void setProfessorDAO(ProfessorDAO professorDAO) {
+
+		this.professorDAO = professorDAO;
+
+	}
+
 }
