@@ -1,23 +1,23 @@
 package com.accenture.academico.model.type;
 
-import javax.faces.bean.ManagedBean;
-
-@ManagedBean(name="tipoSexo")
 public enum TipoSexo {
-
-	MASCULINO,
-	FEMININO,
-	OUTROS;
 	
-	private int id;
+	MASCULINO("Masculino"),
+	FEMININO("Feminino"),
+	OUTROS("Outros");
 
-	public int getId() {
-		return id;
+	private String nomeApresentacao;
+
+	private TipoSexo(String nomeApresentacao) {
+
+		this.nomeApresentacao = nomeApresentacao;
+
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public String getNomeApresentacao() {
+
+		return nomeApresentacao;
+
 	}
-	
 
 }
