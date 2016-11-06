@@ -2,21 +2,33 @@ package com.accenture.academico.service;
 
 import java.util.List;
 
-import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.accenture.academico.dao.AlunoDAO;
 import com.accenture.academico.model.Aluno;
 
-@ManagedBean(name = "alunoService")
 @SessionScoped
 @Service
 public class AlunoServiceImpl implements AlunoService {
 
+	@Autowired
 	private AlunoDAO alunoDAO;
+
+	public AlunoDAO getAlunoDAO() {
+
+		return alunoDAO;
+
+	}
+
+	public void setAlunoDAO(AlunoDAO alunoDAO) {
+
+		this.alunoDAO = alunoDAO;
+
+	}
 
 	@Override
 	@Transactional
@@ -55,17 +67,6 @@ public class AlunoServiceImpl implements AlunoService {
 	public List<Aluno> listAluno() {
 
 		return alunoDAO.listAluno();
-
-	}
-
-	public AlunoDAO getAlunoDAO() {
-		return alunoDAO;
-
-	}
-
-	public void setAlunoDAO(AlunoDAO alunoDAO) {
-
-		this.alunoDAO = alunoDAO;
 
 	}
 

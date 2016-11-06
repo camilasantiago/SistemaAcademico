@@ -52,11 +52,6 @@ public class AlunoControllerImpl implements AlunoController {
 	@Override
 	public List<Aluno> listAluno() {
 
-		System.out.println("Lista Aluno")
-		;
-		
-		
-		
 		return alunoService.listAluno();
 
 	}

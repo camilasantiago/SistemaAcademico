@@ -72,6 +72,12 @@ public abstract class Pessoa implements Serializable {
 
 	}
 
+	public void setCpf(String cpf) {
+
+		this.cpf = cpf;
+
+	}
+
 	public TipoSexo getTipoSexo() {
 
 		return tipoSexo;

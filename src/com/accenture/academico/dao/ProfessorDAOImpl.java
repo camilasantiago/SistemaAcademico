@@ -66,7 +66,6 @@ public class ProfessorDAOImpl implements ProfessorDAO {
 	public List<Professor> listProfessor() {
 
 		Session session = this.sessionFactory.getCurrentSession();
-
 		List<Professor> professorList = session.createQuery("from Professor").list();
 
 		return professorList;
