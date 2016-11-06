@@ -40,6 +40,10 @@ public class Professor extends Pessoa {
 	@OneToMany(mappedBy = "professor")
 	private List<Aluno> listaAlunos;
 
+	public Professor() {
+
+	}
+
 	public Calendar getDtAdmissao() {
 
 		return dtAdmissao;

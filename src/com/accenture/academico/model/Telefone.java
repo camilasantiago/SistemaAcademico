@@ -15,6 +15,10 @@ public class Telefone {
 	@Column(length = 10)
 	private String telefone;
 
+	public Telefone() {
+
+	}
+
 	public String getDdd() {
 
 		return ddd;

@@ -26,11 +26,14 @@ public class Aluno extends Pessoa {
 	private Integer matricula;
 
 	@ManyToOne
-	
 	private Professor professor;
 
 	@OneToMany(mappedBy = "aluno")
 	private List<Publicacao> publicacoes;
+
+	public Aluno() {
+
+	}
 
 	public Professor getProfessor() {
 
@@ -59,13 +62,6 @@ public class Aluno extends Pessoa {
 	public Integer getMatricula() {
 
 		return matricula;
-
-	}
-
-	@Override
-	public String toString() {
-
-		return " => Id: " + this.getId() + " - Nome: " + this.getNome();
 
 	}
 

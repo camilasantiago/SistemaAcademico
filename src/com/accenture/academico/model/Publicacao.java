@@ -36,6 +36,10 @@ public class Publicacao {
 	@Enumerated(EnumType.STRING)
 	private TipoDispositivo meioPublicacao;
 
+	public Publicacao() {
+
+	}
+
 	public String getTitulo() {
 
 		return titulo;

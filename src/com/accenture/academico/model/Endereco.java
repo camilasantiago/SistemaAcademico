@@ -31,6 +31,10 @@ public class Endereco {
 	@Column(length = 2)
 	private String uf;
 
+	public Endereco() {
+
+	}
+
 	public String getLogradouro() {
 
 		return logradouro;

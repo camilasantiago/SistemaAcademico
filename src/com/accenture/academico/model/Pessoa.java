@@ -2,7 +2,6 @@ package com.accenture.academico.model;
 
 import java.io.Serializable;
 
-import javax.faces.bean.ManagedBean;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -22,8 +21,7 @@ import com.accenture.academico.model.type.TipoSexo;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table
-@ManagedBean(name = "pessoa")
-public class Pessoa implements Serializable {
+public abstract class Pessoa implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -46,9 +44,9 @@ public class Pessoa implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private TipoSexo tipoSexo;
 
-	@Column(name = "categoria")
+	@Column(name = "tipoPessoa")
 	@NotNull
-	private TipoPessoa categoria;
+	private TipoPessoa tipoPessoa;
 
 	@Embedded
 	private Endereco endereco = new Endereco();
@@ -74,12 +72,6 @@ public class Pessoa implements Serializable {
 
 	}
 
-	public void setCpf(String cpf) {
-
-		this.cpf = cpf;
-
-	}
-
 	public TipoSexo getTipoSexo() {
 
 		return tipoSexo;
@@ -92,15 +84,15 @@ public class Pessoa implements Serializable {
 
 	}
 
-	public TipoPessoa getCategoria() {
+	public TipoPessoa getTipoPessoa() {
 
-		return categoria;
+		return tipoPessoa;
 
 	}
 
-	public void setCategoria(TipoPessoa categoria) {
+	public void setTipoPessoa(TipoPessoa categoria) {
 
-		this.categoria = categoria;
+		this.tipoPessoa = categoria;
 
 	}
 
