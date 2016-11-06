@@ -66,20 +66,6 @@
 		<beans:property name="alunoService" ref="alunoService" />
 	</beans:bean>
 
-	<!-- Telefone -->
-	<beans:bean id="telefoneDAO" class="com.accenture.academico.dao.TelefoneDAOImpl">
-		<beans:property name="sessionFactory"
-			ref="hibernate4AnnotatedSessionFactory" />
-	</beans:bean>
-	<beans:bean id="telefoneService"
-		class="com.accenture.academico.service.TelefoneServiceImpl">
-		<beans:property name="telefoneDAO" ref="telefoneDAO" />
-	</beans:bean>
-	<beans:bean id="telefoneController"
-		class="com.accenture.academico.controller.TelefoneControllerImpl">
-		<beans:property name="telefoneService" ref="telefoneService" />
-	</beans:bean>
-
 	<!-- Professor -->
 	<beans:bean id="professorService"
 		class="com.accenture.academico.service.ProfessorServiceImpl">

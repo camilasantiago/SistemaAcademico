@@ -1,7 +1,6 @@
 package com.accenture.academico.model;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.persistence.Column;
@@ -14,7 +13,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -55,8 +53,8 @@ public class Pessoa implements Serializable {
 	@Embedded
 	private Endereco endereco = new Endereco();
 
-	@OneToMany(mappedBy = "pessoa")
-	private List<Telefone> telefone;
+	@Embedded
+	private Telefone telefone;
 
 	public String getNome() {
 
@@ -118,13 +116,13 @@ public class Pessoa implements Serializable {
 
 	}
 
-	public List<Telefone> getTelefone() {
+	public Telefone getTelefone() {
 
 		return telefone;
 
 	}
 
-	public void setTelefone(List<Telefone> telefone) {
+	public void setTelefone(Telefone telefone) {
 
 		this.telefone = telefone;
 
