@@ -4,100 +4,82 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:c="http://java.sun.com/jsf/core"
-	xmlns:q="http://java.sun.com/jsp/jstl/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<title>Formulario</title>
-	<link rel="stylesheet" type="text/css" href="css/estilo.css" />	
+	<title>Home</title>
+	<h:outputStylesheet library="bootstrap/css" name="bootstrap.min.css" />
 </h:head>
 
 <h:body>
-<div id ="global">
-	<div id="topo">
-     </div>
-<!-- 	<h:form>
-	<h1><h:outputText value="#{olaMundoBean.ola}" /></h1><br/>
-	<h:outputText value="#{olaMundoBean.horario}" /><br/><br/>
-	<h:outputLabel value="#{olaMundoBean.text1}"/>
-	<h:inputText value="#{olaMundoBean.nome}"/><br/>
-	<h:outputLabel value="#{olaMundoBean.text2}"/>
-	<h:inputText value="#{olaMundoBean.sobrenome}"/><br/>
-	<h:outputLabel value="#{olaMundoBean.text3}"/>
-	<h:inputText value="#{olaMundoBean.cpf}" maxlength ="11" required="true"/><br/>
-	<h:commandButton action="#{olaMundoBean.validaCPF(cpf)}" actionListener="#{olaMundoBean.nomeFoiDigitado}"  value="Ok"/>
-	<h:outputText value="Bem vindo ao mundo, #{olaMundoBean.nome} #{olaMundoBean.sobrenome}" rendered="#{not empty olaMundoBean.nome}"/>
-	</h:form>
-	 -->
-	<div id="formulario">
-	<h:form>
-		<fieldset>
-			<legend>Cadastro</legend>
-			<h:panelGrid columns="2" cellpadding="2" cellspacing="2">
-			
-			<h:outputLabel value="Nome: " for="nome"></h:outputLabel>
-			<h:inputText id="nome" value="#{pessoa.nome}"></h:inputText>
-			
-			 <div class="field">
-            <h:outputLabel for="Sexo" value="Sexo" />
-            <!-- PROBLEMAS NO COMMIT POR CONTA DO ENUM -->
-            <h:selectOneMenu id="Sexo" value="#{pessoa.tipoSexo}" >
-                <c:selectItem itemLabel="FEMININO" itemValue="0" />
-                <c:selectItem itemLabel="MASCULINO" itemValue="1" />
-                <c:selectItem itemLabel="Outros" itemValue="2" />
-            </h:selectOneMenu>
-            <hr/>
-        </div>
-   			   			
-			<h:outputLabel value="CPF: " for="cpf"></h:outputLabel>
-			<h:inputText id="cpf" value="#{pessoa.cpf}"></h:inputText>
-				
-			<h:outputLabel value="Admissão: " for="matricula"></h:outputLabel>
-			<h:inputText value="#{professor.dtAdmissao}">  
-  			 <c:convertDateTime pattern="dd/MM/yyyy"/>  
-				</h:inputText>
-			
-			<h:outputLabel value="Departamento: " for="departamento"></h:outputLabel>
-			<h:inputText id="departamento" value="#{professor.departamento}"  disabled="#{pessoa.categoria.nomeApresentacao == 'professor'}"></h:inputText>
-			
-			<h:outputLabel value="Instituição de Ensino: " for="inEnsino"></h:outputLabel>
-			<h:inputText id="instensino" value="#{professor.instEnsino}" disabled="#{pessoa.categoria.nomeApresentacao == 'professor'}" ></h:inputText>
-		<h:form>
-		<table>
-			<tr>
-				<td><label>DDD</label></td>
-				<td><h:inputText id="ddd" value="#{telefone.ddd}"></h:inputText>
-				</td>
-			</tr>
-			<tr>
-				<td><label>Telefone</label></td>
-				<td><h:inputText id="telefone" value="#{telefone.telefone}"></h:inputText>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2"><h:commandButton
-						action="#{telefoneController.addTelefone(telefone)}" value="Add telefone"></h:commandButton>
-				</td>
-			</tr>
-			<td colspan="2"><h:commandButton
-						action="#{professorController.addProfessor(professor)}" value="Add professor"></h:commandButton>
-				</td>
+	<div id="global">
+		<div id="topo"></div>
 
-		</table>
+		<div id="formulario">
+			<h:form>
+				<fieldset>
+					<legend>Cadastro</legend>
+					<h:panelGrid columns="2" cellpadding="2" cellspacing="2">
 
-	</h:form>
-	
-	
-<q:if test="(pessoa.tipo == 'PROFESSOR')" ></q:if>
-			
-			
-			
-			</h:panelGrid>
-		</fieldset>
-	</h:form>
-	</div>
-	<div id="rodape">
-    </div>
+						<h:outputLabel value="Nome: " for="nome"></h:outputLabel>
+						<h:inputText id="nome" value="#{pessoa.nome}"></h:inputText>
+
+						<div class="field">
+							<h:outputLabel for="Sexo" value="Sexo" />
+							<!-- PROBLEMAS NO COMMIT POR CONTA DO ENUM -->
+							<h:selectOneMenu id="Sexo" value="#{pessoa.tipoSexo}">
+								<c:selectItem itemLabel="FEMININO" itemValue="0" />
+								<c:selectItem itemLabel="MASCULINO" itemValue="1" />
+								<c:selectItem itemLabel="Outros" itemValue="2" />
+							</h:selectOneMenu>
+							<hr />
+						</div>
+
+						<h:outputLabel value="CPF: " for="cpf"></h:outputLabel>
+						<h:inputText id="cpf" value="#{pessoa.cpf}"></h:inputText>
+
+						<h:outputLabel value="Admissão: " for="matricula"></h:outputLabel>
+						<h:inputText value="#{professor.dtAdmissao}">
+							<c:convertDateTime pattern="dd/MM/yyyy" />
+						</h:inputText>
+
+						<h:outputLabel value="Departamento: " for="departamento"></h:outputLabel>
+						<h:inputText id="departamento" value="#{professor.departamento}"
+							disabled="#{pessoa.categoria.nomeApresentacao == 'professor'}"></h:inputText>
+
+						<h:outputLabel value="Instituição de Ensino: " for="inEnsino"></h:outputLabel>
+						<h:inputText id="instensino" value="#{professor.instEnsino}"
+							disabled="#{pessoa.categoria.nomeApresentacao == 'professor'}"></h:inputText>
+						<h:form>
+							<table>
+								<tr>
+									<td><label>DDD</label></td>
+									<td><h:inputText id="ddd" value="#{telefone.ddd}"></h:inputText>
+									</td>
+								</tr>
+								<tr>
+									<td><label>Telefone</label></td>
+									<td><h:inputText id="telefone"
+											value="#{telefone.telefone}"></h:inputText></td>
+								</tr>
+								<tr>
+									<td colspan="2"><h:commandButton
+											action="#{telefoneController.addTelefone(telefone)}"
+											value="Add telefone"></h:commandButton></td>
+								</tr>
+								<td colspan="2"><h:commandButton
+										action="#{professorController.addProfessor(professor)}"
+										value="Add professor"></h:commandButton></td>
+
+							</table>
+
+						</h:form>
+
+					</h:panelGrid>
+				</fieldset>
+			</h:form>
+		</div>
+		<div id="rodape"></div>
 	</div>
 </h:body>
 </html>
