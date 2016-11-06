@@ -6,53 +6,58 @@ import javax.faces.bean.ManagedBean;
 
 import org.springframework.stereotype.Controller;
 
-import com.accenture.academico.dao.AlunoDAO;
 import com.accenture.academico.model.Aluno;
+import com.accenture.academico.service.AlunoService;
 
 @ManagedBean(name = "alunoController")
 @Controller
 public class AlunoControllerImpl implements AlunoController {
 
-	private AlunoDAO alunoDAO;
+	private AlunoService alunoService;
 
-	public void setAlunoDAO(AlunoDAO alunoDAO) {
+	public void setAlunoService(AlunoService alunoDAO) {
 
-		this.alunoDAO = alunoDAO;
+		this.alunoService = alunoDAO;
 
 	}
 
 	@Override
 	public void addAluno(Aluno a) {
 
-		alunoDAO.addAluno(a);
+		alunoService.addAluno(a);
 
 	}
 
 	@Override
 	public void updateAluno(Aluno a) {
 
-		alunoDAO.updateAluno(a);
+		alunoService.updateAluno(a);
 
 	}
 
 	@Override
 	public void removeAluno(Aluno a) {
 
-		alunoDAO.removeAluno(a);
+		alunoService.removeAluno(a);
 
 	}
 
 	@Override
 	public Aluno findAluno(Long id) {
 
-		return alunoDAO.findAluno(id);
+		return alunoService.findAluno(id);
 
 	}
 
 	@Override
 	public List<Aluno> listAluno() {
 
-		return alunoDAO.listAluno();
+		System.out.println("Lista Aluno")
+		;
+		
+		
+		
+		return alunoService.listAluno();
 
 	}
 

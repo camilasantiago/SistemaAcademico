@@ -64,9 +64,11 @@ public class AlunoDAOImpl implements AlunoDAO {
 	@Override
 	public List<Aluno> listAluno() {
 
+		
+		
 		Session session = this.sessionFactory.getCurrentSession();
 		List<Aluno> alunoList = session.createQuery("from Aluno").list();
-
+		
 		return alunoList;
 
 	}

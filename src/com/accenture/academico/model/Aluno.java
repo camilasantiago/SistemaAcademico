@@ -26,7 +26,7 @@ public class Aluno extends Pessoa {
 	private Integer matricula;
 
 	@ManyToOne
-	@NotNull
+	
 	private Professor professor;
 
 	@OneToMany(mappedBy = "aluno")

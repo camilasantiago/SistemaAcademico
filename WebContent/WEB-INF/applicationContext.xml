@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <beans:beans xmlns="http://www.springframework.org/schema/mvc"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
@@ -64,6 +63,10 @@
 	<beans:bean id="alunoService"
 		class="com.accenture.academico.service.AlunoServiceImpl">
 		<beans:property name="alunoDAO" ref="alunoDAO" />
+	</beans:bean>
+	<beans:bean id="alunoController"
+		class="com.accenture.academico.controller.AlunoControllerImpl">
+		<beans:property name="alunoService" ref="alunoService" />
 	</beans:bean>
 
 	<!-- Titulo -->

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Sistema Acadêmico</title>
+	<h:outputStylesheet library="bootstrap/css" name="bootstrap.min.css" />
+</h:head>
+
+<h:body>
+
+	<div class="row">
+
+		<h:dataTable id="items" value="#{alunoController.listAluno()}" var="item">
+			<h:column>
+				<c:facet name="header">
+					<h:outputText value="Nome" />
+				</c:facet>
+				<h:outputText value="#{item.nome}" />
+			</h:column>
+			<h:column>
+				<c:facet name="header">
+					<h:outputText value="CPF" />
+				</c:facet>
+				<h:outputText value="#{item.cpf}" />
+			</h:column>
+			<h:column>
+				<c:facet name="header">
+					<h:outputText value="Matrícula" />
+				</c:facet>
+				<h:outputText value="#{item.matricula}" />
+			</h:column>
+		</h:dataTable>
+
+
+	</div>
+
+</h:body>
+</html>
