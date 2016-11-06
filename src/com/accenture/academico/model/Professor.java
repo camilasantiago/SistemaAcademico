@@ -6,7 +6,6 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
@@ -31,12 +30,12 @@ public class Professor extends Pessoa {
 	@NotNull
 	private String departamento;
 
-	@ManyToOne
-	@NotNull
-	private Titulo titulo;
-
 	@NotNull
 	private String instEnsino;
+
+	@NotNull
+	@Column(length = 50)
+	private String titulacao;
 
 	@OneToMany(mappedBy = "professor")
 	private List<Aluno> listaAlunos;
@@ -65,18 +64,6 @@ public class Professor extends Pessoa {
 
 	}
 
-	public Titulo getTitulo() {
-
-		return titulo;
-
-	}
-
-	public void setTitulo(Titulo titulo) {
-
-		this.titulo = titulo;
-
-	}
-
 	public List<Aluno> getListaAlunos() {
 
 		return listaAlunos;
@@ -86,6 +73,18 @@ public class Professor extends Pessoa {
 	public void setListaAlunos(List<Aluno> listaAlunos) {
 
 		this.listaAlunos = listaAlunos;
+
+	}
+
+	public String getTitulacao() {
+
+		return titulacao;
+
+	}
+
+	public void setTitulacao(String titulacao) {
+
+		this.titulacao = titulacao;
 
 	}
 

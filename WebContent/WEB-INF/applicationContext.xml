@@ -39,7 +39,6 @@
 				<beans:value>com.accenture.academico.model.Publicacao</beans:value>
 				<beans:value>com.accenture.academico.model.MeioPublicacao
 				</beans:value>
-				<beans:value>com.accenture.academico.model.Titulo</beans:value>
 			</beans:list>
 		</beans:property>
 
@@ -67,20 +66,6 @@
 	<beans:bean id="alunoController"
 		class="com.accenture.academico.controller.AlunoControllerImpl">
 		<beans:property name="alunoService" ref="alunoService" />
-	</beans:bean>
-
-	<!-- Titulo -->
-	<beans:bean id="tituloDAO" class="com.accenture.academico.dao.TituloDAOImpl">
-		<beans:property name="sessionFactory"
-			ref="hibernate4AnnotatedSessionFactory" />
-	</beans:bean>
-	<beans:bean id="tituloService"
-		class="com.accenture.academico.service.TituloServiceImpl">
-		<beans:property name="tituloDAO" ref="tituloDAO" />
-	</beans:bean>
-	<beans:bean id="tituloController"
-		class="com.accenture.academico.controller.TituloControllerImpl">
-		<beans:property name="tituloService" ref="tituloService" />
 	</beans:bean>
 
 	<!-- Telefone -->
