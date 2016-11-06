@@ -13,6 +13,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
+import com.accenture.academico.model.type.TipoPessoa;
+
 @Entity
 @PrimaryKeyJoinColumn(name = "idPessoa")
 @Table
@@ -41,6 +43,8 @@ public class Professor extends Pessoa {
 	private List<Aluno> listaAlunos;
 
 	public Professor() {
+
+		this.setTipoPessoa(TipoPessoa.PROFESSOR);
 
 	}
 

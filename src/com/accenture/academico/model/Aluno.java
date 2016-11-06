@@ -12,6 +12,8 @@ import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.accenture.academico.model.type.TipoPessoa;
+
 @Entity
 @PrimaryKeyJoinColumn(name = "idPessoa")
 @Table
@@ -32,6 +34,8 @@ public class Aluno extends Pessoa {
 	private List<Publicacao> publicacoes;
 
 	public Aluno() {
+
+		this.setTipoPessoa(TipoPessoa.ALUNO);
 
 	}
 
