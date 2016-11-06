@@ -37,8 +37,6 @@
 				<beans:value>com.accenture.academico.model.Endereco</beans:value>
 				<beans:value>com.accenture.academico.model.Telefone</beans:value>
 				<beans:value>com.accenture.academico.model.Publicacao</beans:value>
-				<beans:value>com.accenture.academico.model.MeioPublicacao
-				</beans:value>
 			</beans:list>
 		</beans:property>
 

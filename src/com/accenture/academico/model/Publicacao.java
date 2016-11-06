@@ -3,10 +3,14 @@ package com.accenture.academico.model;
 import javax.faces.bean.ManagedBean;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
+
+import com.accenture.academico.model.type.TipoDispositivo;
 
 @Entity
 @ManagedBean(name = "publicacao")
@@ -28,8 +32,9 @@ public class Publicacao {
 	@NotNull
 	private Aluno aluno;
 
-	@ManyToOne
-	private MeioPublicacao meioPublicacao;
+	@NotNull
+	@Enumerated(EnumType.STRING)
+	private TipoDispositivo meioPublicacao;
 
 	public String getTitulo() {
 
@@ -67,13 +72,13 @@ public class Publicacao {
 
 	}
 
-	public MeioPublicacao getMeioPublicacao() {
+	public TipoDispositivo getMeioPublicacao() {
 
 		return meioPublicacao;
 
 	}
 
-	public void setMeioPublicacao(MeioPublicacao meioPublicacao) {
+	public void setMeioPublicacao(TipoDispositivo meioPublicacao) {
 
 		this.meioPublicacao = meioPublicacao;
 
