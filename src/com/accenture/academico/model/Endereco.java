@@ -1,26 +1,15 @@
 package com.accenture.academico.model;
 
-import java.util.List;
-
-import javax.faces.bean.ManagedBean;
 import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.Embeddable;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
 import com.accenture.academico.model.type.CidadesPernambuco;
 
-@Entity
-@ManagedBean(name = "endereco")
+@Embeddable
 public class Endereco {
-
-	@Id
-	@GeneratedValue
-	private Long id;
 
 	@NotNull
 	@Column(length = 200)
@@ -31,17 +20,16 @@ public class Endereco {
 	private String bairro;
 
 	@NotNull
-	private Integer numero;
+	@Column(length = 10)
+	private String numero;
 
 	@NotNull
 	@Enumerated(EnumType.STRING)
 	private CidadesPernambuco cidades;
 
 	@NotNull
+	@Column(length = 2)
 	private String uf;
-
-	@OneToMany(mappedBy = "endereco")
-	private List<Pessoa> pessoas;
 
 	public String getLogradouro() {
 
@@ -67,13 +55,13 @@ public class Endereco {
 
 	}
 
-	public Integer getNumero() {
+	public String getNumero() {
 
 		return numero;
 
 	}
 
-	public void setNumero(Integer numero) {
+	public void setNumero(String numero) {
 
 		this.numero = numero;
 
@@ -100,24 +88,6 @@ public class Endereco {
 	public void setUf(String uf) {
 
 		this.uf = uf;
-
-	}
-
-	public List<Pessoa> getPessoas() {
-
-		return pessoas;
-
-	}
-
-	public void setPessoas(List<Pessoa> pessoas) {
-
-		this.pessoas = pessoas;
-
-	}
-
-	public Long getId() {
-
-		return id;
 
 	}
 
